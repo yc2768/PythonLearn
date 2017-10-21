@@ -1,0 +1,50 @@
+pwd 查看当前路径
+ls 
+ls 2* 查看2开头文件
+ls 2?.txt 查看2后一位
+ls 2[12].txt 查看2开头后一位在1,2
+ls 2[1-5].txt
+ls > pyc.txt 将上次命令存到pyc.txt中 重定向
+ls >> pyc.txt 追加
+
+ls -alh /bin >> aa.txt
+more aa.txt 可以分屏查看内容 按f前看按b后看
+
+ls -alh /bin | more
+ls -alh  查看所有以列表形式
+ls -alh /bin
+cd Desktop  进入桌面
+cd Desktop/pyc 等同于 cd  ./Desktop/pyc/
+cd ../.. 用相对路径返回上级目录的上级目录或者用绝对路径cd /home/python/
+cd .. 返回上一级
+cd ~  返回根目录
+cd - 进入上次目录
+touch 1.txt 创建文件
+mkdir test 创建文件夹
+mkdir A/B/C -p 在A文件夹创建B文件夹在B里创建C
+rmdir c 删除文件夹
+
+cd A 
+rm B -r 递归的删除目录
+
+tree 树形查看
+rm 1.txt 删除文件
+gedit 1.txt  编辑文件
+cat 1.txt 查看文件内容
+cat 1.txt pyc.txt 查看多个文件
+cat 1.txt pyc.txt > 1pyc.txt 把两个文件内容合并到一个文件中
+history
+Ctrl+c取消命令
+ln -s a1.txt  a1-softlink.txt 创建软连接
+cat a1-softlink.txt 用软连接看a1.txt 类似Windows快捷方式
+ln a1.txt a1-hardlink.txt 创建硬链接
+mv 1-softlink.txg 1-softlink.txt 重命名
+mv 1.txt /home/python/Desktop/pyc/ 将1.txt剪切到/home/python/Desktop/pyc/目录下
+cp 2.txt 2/ 复制2.txt到2目录下
+cp 2 1/ -r  将2目录拷贝到1目录下
+grep "a1" a1.txt 在a1.txt中查找a1关键字
+grep -n  "a1" a1.txt  在a1.txt中查找a1关键字包含在哪一行
+grep -v  "a1" a1.txt  在a1.txt中查找不包含a1关键字
+grep "^a1" a1.txt  在a1.txt中查找包含a1关键字开头
+grep "a1$" a1.txt  在a1.txt中查找包含a1关键字结尾的
+

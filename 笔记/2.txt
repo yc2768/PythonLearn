@@ -1,0 +1,107 @@
+sudo find /  -name "*name"  在当前目录下搜索名字name文件
+sudo find /  -size 1G       在当前目录下搜索1G大小的文件
+sudo find /  -size  +1M      在当前目录下搜索大于1M大小的文件
+sudo find /  -size -1M      在当前目录下搜索小于1M大小的文件
+sudo find /  -size +1k -size -5M   在当前目录下搜索大于1k小于5M的文件
+sudo find / -perm 666      查找权限为666的文件或目录
+find --help
+tar -cvf python.tar *py  将所有py文件打包成python.tar
+tar -xvf python.tar   解压文件到当前目录
+tar -zcvf python.tar.gz *.py  将py文件压缩python.tar.gz文件
+tar -zxvf python.tar.gz 解压
+tar -jcvf python1.tar.bz2 *.py 以bz2方式压缩
+tar -jxvf python1.tar.bz2  解压
+tar -jxvf python1.tar.bz2 -C python1  解压到指定目录
+zip python.zip *.py    
+unzip python.zip
+unzip -d python1/  python.zip 解压到python1目录下
+gz压缩最小<bz2<zip
+which ls 显示命令路径
+cal 显示日历
+cal -y 2018 显示2018所有日历
+cal -y 2017 > 2017.txt 将2017日历写到2017.txt中
+date 查看当前时间
+date "+%Y********%m*******%d"
+ps -aux 当前进程
+top 查看进程 q退出
+htop 查看运行情况 q退出
+kill -9 9822 杀死9822是PID
+shutdown -h now 立刻关机
+df -h 磁盘使用情况
+du -h 当前路径占得磁盘情况
+ifconfig 查看网络
+sudo ifconfig ens33 192.168.1.103 修改ip地址
+ping 192.167.1.104 ping命令
+sudo useradd pyc -m 添加用户
+cat /etc/passwd  查看是否是用户
+sudo passwd pyc  对用户设置密码
+su pyc 切换到pyc账户
+exit退出当前账户
+whoami 查看当前账户名称   Linux可以多用户
+ssh  python@192.168.1.103 远程登录python账户，他的ip地址192.168.1.103
+ctrl+shift+t 打开多终端标签
+alt+终端标签数切换
+who 当前有多少人登录
+sudo userdel pyc 删除用户
+sudo userdel -r pyc 同时删除家
+su - pyc 目录也切换到pyc对应目录中
+sudo -s 切换到超级管理员
+sudo groupadd yyy 创建组
+sudo groupdel yyy 删除组
+cat /etc/group 查看组 在相同组中有相同的权限
+ groupmod +Tab键查看组
+cat /etc/group | grep sudo
+cat /etc/group | grep adm
+
+新创建的用户不能切换到超级管理员账户
+需要以下修改，先退出用装系统设的用户输入以下命令
+sudo usermod -a -G sudo pyc
+sudo usermod -a -G adm  pyc
+
+chgrp YYY 1.py 改变组  以管理员用户操作
+chown xxx 1.py 改变拥有者  以管理员用户操作
+
+ll后最前面一位d代表文件夹，-代表文件 然后第一个三位代表拥有者权限r读w写x可执行-代表没有权限，第二个三位是同组权限，第三个三位表示其他人权限
+u拥有者，g同组者，o其他人
+chmod u=rwx 1.txt 对1.txt拥有者增加可读可写可执行权限
+chmod g=rwx 1.txt 对1.txt同组者增加可读可写可执行权限
+chmod o=rw 1.txt  对1.txt其他人增加可读可写
+chmod u=rw,g=rw,o=r 1.txt 修改为默认的权限
+
+sublimeText缩进Tab，退回缩进Shift+Tab键
+vim 4.py 创建4.py文件并打开
+按i插入模式，esc末行模式：wq保存退出，:q! 退出不保存，shift+zz 相当于wq
+                   大写O上一行
+I大写行首   小写i 插入光标前一个，小写a插入光标后一个 ，大写A行尾
+                   小写o下一行
+Vim命令
+yy:复制光标这一行。 p粘贴。
+dd:删除光标一行。也是剪切 
+D:剪切光标后到末尾
+d0:从光标删到行首
+x:删除光标，每次删除后一个
+X:删除光标，每次删除前一个
+4yy:复制光标后的四行
+2dd：删除光标下的两行
+在命令模式下移动光标 h左，j下，k上，l右  H:当前屏幕的上方，M:当前屏幕的中间，L:当前屏幕的下方
+
+Ctrl+f 向下翻一页，Ctrl+b 向上翻一页
+Ctrl+d 向下翻半页，Ctrl+u 向上翻半页
+按6 再按大写G，跳的指定的第6行
+G:回到最后一行
+gg:快速回到第一行
+w:向后跳一个单词的长度，即调到下一个单词的开始处
+b:向前跳一个单词的长度，即调到上一个单词的开始处
+u:撤销
+ctrl+r 反撤销
+V:选择代码块
+v:选择代码块
+<<:左移
+>>:右移
+{：调到上一代码块
+}：调到下一代码块
+r：在光标处替换，只能替换一个
+R:从当前光标后都可替换
+/搜索单词
+:%s/hello/world/g  把hello替换成world
+：1,10s/hello/world/g 将第一行到第十行hello替换成world

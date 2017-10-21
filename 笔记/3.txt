@@ -1,0 +1,61 @@
+vim /etc/apt/sources.list  查看安装软件镜像的地址
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup  备份安装路径镜像地址
+sudo apt-get update 更新源
+sudo apt-get intstall 安装包
+sudo apt-get remove 安装包
+sudo apt-cache search 安装包
+sudo apt-cache show 安装包   获取包信息
+
+ vi test.sh 创建shell文件写上 ls pwd
+ chmod u+x test.sh  修改test文件权限可执行
+./test.sh  执行test.sh里面的命令
+
+
+vi firstc.c 创建c语言
+gcc firstc.c 编译c语言
+ ./a.out  执行c语言
+
+python 1.py  执行python文件
+直接敲python 输入命令，exit()退出
+python3 显示3.x版本
+ipython 既可以输入python内容又可以命令
+ipython3
+# 单行注释
+"""  """ 或''' ''' 多行注释
+#coding=utf-8  python 2.x版本需要设置编码 或# -*- coding=utf-8 -*-
+
+input()输入函数 在python2会报错 python3中输入函数 默认输入的字符串变量
+raw_input()函数 python2中输入函数
+
+type(变量)输出变量类型
+if 判断执行 可以执行多条相同Tab键的语句，最后一行不相同Tab键不属于if判断但还会执行
+
+enlishScore 小驼峰命名规则
+
+查看关键字
+ipython
+import keyword
+keyword.kwlist  
+
+#运算符
+'''
+a=5
+b=3
+print("和:%d"%(a+b))
+print("差:%d"%(a-b))
+print("积:%d"%(a*b))
+print("商:%d"%(a//b))
+print("取整:%d"%(a/b))
+print("取余:%d"%(a%b))
+'''
+"""
+print("幂：%d"%(2**10))
+print("幂：%d"%(2**16))
+print("hi"*6)
+"""
+
+'''
+name="python"
+age=1
+print("name:%s,age:%d"%(name,age))
+'''
